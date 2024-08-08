@@ -2,6 +2,8 @@ package com.project.OnlineBanking.Models;
 
 import java.math.BigDecimal;
 
+import com.project.OnlineBanking.Helpers.AccountType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -18,7 +20,7 @@ public class Account {
 	    private Long accountNumber;
 	    
 	    @Enumerated(EnumType.STRING)
-	    private String accountType; 
+	    private AccountType accountType; 
 	    private BigDecimal balance; 
 
 	    @ManyToOne 

@@ -25,18 +25,18 @@ public class Transaction {
 
     @ManyToOne 
     @JoinColumn(name = "source_account") 
-    private Long sourceAccount; 
+    private Account sourceAccount; 
 
     @ManyToOne 
     @JoinColumn(name = "destination_account") 
-    private Long destinationAccount;
+    private Account destinationAccount;
     
     public Transaction() {
     	
     }
     
-	public Transaction(Long transactionId, BigDecimal amount, LocalDateTime transactionDate, Long sourceAccount,
-			Long destinationAccount) {
+	public Transaction(Long transactionId, BigDecimal amount, LocalDateTime transactionDate, Account sourceAccount,
+			Account destinationAccount) {
 		super();
 		this.transactionId = transactionId;
 		this.amount = amount;
@@ -69,19 +69,20 @@ public class Transaction {
 		this.transactionDate = transactionDate;
 	}
 
-	public Long getSourceAccount() {
+	public Account getSourceAccount() {
 		return sourceAccount;
 	}
 
-	public void setSourceAccount(Long sourceAccount) {
+	public void setSourceAccount(Account sourceAccount) {
 		this.sourceAccount = sourceAccount;
 	}
 
-	public Long getDestinationAccount() {
+	public Account getDestinationAccount() {
 		return destinationAccount;
 	}
 
-	public void setDestinationAccount(Long destinationAccount) {
+	public void setDestinationAccount(
+		Account destinationAccount) {
 		this.destinationAccount = destinationAccount;
 	}
 
